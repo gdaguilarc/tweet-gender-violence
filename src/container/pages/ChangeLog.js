@@ -15,20 +15,7 @@ const { Panel } = Collapse;
 const ChangeLog = () => {
   return (
     <>
-      <PageHeader
-        title="Changelog"
-        buttons={[
-          <div key="1" className="page-header-actions">
-            <CalendarButtonPageHeader />
-            <ExportButtonPageHeader />
-            <ShareButtonPageHeader />
-            <Button size="small" type="primary">
-              <FeatherIcon icon="plus" size={14} />
-              Add New
-            </Button>
-          </div>,
-        ]}
-      />
+      <PageHeader title="Changelog" />
       <Main>
         <Row gutter={25}>
           <Col xxl={19} md={16} xs={24}>

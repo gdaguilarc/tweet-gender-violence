@@ -30,6 +30,19 @@ const ChangeLog = () => {
               >
                 <div className="changelog-featured">
                   <div className="version-list">
+                    <div className="version-list__single">
+                      <div className="version-list__top">
+                        <span className="badge badge-lg badge-info">Document</span>
+                      </div>
+                      <ul className="version-info">
+                        <li>
+                          <a href={versions[0].link} target="_blank">
+                            Go to Document
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
                     {versions[0].new && (
                       <div className="version-list__single">
                         <div className="version-list__top">
@@ -37,18 +50,6 @@ const ChangeLog = () => {
                         </div>
                         <ul className="version-success">
                           {versions[0].new.map((item, key) => {
-                            return <li key={key + 1}>{item}</li>;
-                          })}
-                        </ul>
-                      </div>
-                    )}
-                    {versions[0].fixed && (
-                      <div className="version-list__single">
-                        <div className="version-list__top">
-                          <span className="badge badge-lg badge-info">Fixed</span>
-                        </div>
-                        <ul className="version-info">
-                          {versions[0].fixed.map((item, key) => {
                             return <li key={key + 1}>{item}</li>;
                           })}
                         </ul>
@@ -85,6 +86,18 @@ const ChangeLog = () => {
                             }
                           >
                             <div className="version-list">
+                              <div className="version-list__single">
+                                <div className="version-list__top">
+                                  <span className="badge badge-lg badge-info">Document</span>
+                                </div>
+                                <ul className="version-info">
+                                  <li>
+                                    <a href={version.link} target="_blank">
+                                      Go to Document
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
                               {version.new && (
                                 <div className="version-list__single">
                                   <div className="version-list__top">
@@ -92,18 +105,6 @@ const ChangeLog = () => {
                                   </div>
                                   <ul className="version-success">
                                     {version.new.map((item, key) => {
-                                      return <li key={key + 1}>{item}</li>;
-                                    })}
-                                  </ul>
-                                </div>
-                              )}
-                              {version.fixed && (
-                                <div className="version-list__single">
-                                  <div className="version-list__top">
-                                    <span className="badge badge-lg badge-info">Fixed</span>
-                                  </div>
-                                  <ul className="version-info">
-                                    {version.fixed.map((item, key) => {
                                       return <li key={key + 1}>{item}</li>;
                                     })}
                                   </ul>

@@ -1,27 +1,42 @@
 [
   {
+    "id": 3,
+    "date": "Nov 30, 2020",
+    "version": "3.0.0",
+    "new": ["Third Sprint", "Results", "Conclusion"],
+    "fixed": false,
+    "updated": [
+      "Deep Learning (LSTM) for Tweet Classification",
+      "Bi-Directional LSTM",
+      "Convolutions stacked on top of each state vector in the LSTM"
+    ],
+    "link": "https://drive.google.com/file/d/11lzlEHZFnw1anC-6YkDttWx_gqJNMzjJ/view?usp=sharing"
+  },
+  {
     "id": 2,
-    "date": "Nov 12, 2020",
+    "date": "Oct 29, 2020",
     "version": "2.0.0",
     "new": [
-      "New 8 card styles",
-      "Contact App 'add new contact' page",
-      "Contact App grid style",
-      "Editor Page",
-      "Wizard Page",
-      "Widgets Page",
-      "Coming Soon Page",
-      "Changelog Page"
+      "Second Sprint",
+      "Deep Learning (LSTM) for Tweet Classification",
+      "Tokenize Text",
+      "Baselines",
+      "Building Recurrent Neural Network",
+      "Simple implementation of an LSTM",
+      "Bi-Directional LSTM",
+      "Convolutions stacked on top of each state vector in the LSTM"
     ],
-    "fixed": ["Content app button style issue"],
-    "updated": ["Cards", "Contact App", "Menu Item Rearrange", "Update note app with drag & drop"]
+    "fixed": false,
+    "updated": ["Introduction", "Related Work"],
+    "link": "https://drive.google.com/file/d/11lzlEHZFnw1anC-6YkDttWx_gqJNMzjJ/view?usp=sharing"
   },
   {
     "id": 1,
-    "date": "Sep 27, 2020",
+    "date": "Sep 17, 2020",
     "version": "1.0.0",
-    "new": ["Initial Release"],
+    "new": ["First Sprint", "Introduction", "Related Work", "References"],
     "fixed": false,
-    "updated": false
+    "updated": false,
+    "link": "https://drive.google.com/file/d/1mgrFLQ0W12q-rtOLqiUoUt3BuMLUnMwh/view?usp=sharing"
   }
 ]
