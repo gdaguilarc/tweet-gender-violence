@@ -18,12 +18,20 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-    - uses: kciter/aws-ecr-action@master
+    - run: docker build --tag nice-bot:${{ github.sha }} --tag nice-bot:latest .
+    - name: Push to ECR
+      id: ecr_sha
+      uses: jwalton/gh-ecr-push@v1
       with:
-        access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-        repo: nice-bot
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: us-east-1
-        tags: latest,${{ github.sha }}
-        create_repo: true
+        image: nice-bot:${{ github.sha }}
+    - name: Push to ECR
+      id: ecr_latest
+      uses: jwalton/gh-ecr-push@v1
+      with:
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: us-east-1
+        image: nice-bot:latest
