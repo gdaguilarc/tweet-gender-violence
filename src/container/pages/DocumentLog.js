@@ -1,15 +1,10 @@
 import React from 'react';
 import { Row, Col, Collapse } from 'antd';
-import FeatherIcon from 'feather-icons-react';
 import { ChangelogWrapper, VersionHistoryList } from './style';
 import { PageHeader } from '../../components/page-headers/page-headers';
 import { Main } from '../styled';
 import { Cards } from '../../components/cards/frame/cards-frame';
-import { Button } from '../../components/buttons/buttons';
 import versions from '../../demoData/documentlog.json';
-import { ShareButtonPageHeader } from '../../components/buttons/share-button/share-button';
-import { ExportButtonPageHeader } from '../../components/buttons/export-button/export-button';
-import { CalendarButtonPageHeader } from '../../components/buttons/calendar-button/calendar-button';
 
 const { Panel } = Collapse;
 const ChangeLog = () => {
