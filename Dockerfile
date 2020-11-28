@@ -4,12 +4,12 @@ COPY . .
 
 RUN npm install
 
-RUN npm run build
+#RUN npm run build
 
-FROM nginx:latest as deployer
+#FROM nginx:latest as deployer
 
-COPY --from=builder /build /usr/share/nginx/html
+#COPY --from=builder /build /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "start"]
