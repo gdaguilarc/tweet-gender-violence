@@ -17,14 +17,21 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    steps:
-    - uses: kciter/aws-ecr-action@master
-      with:
-        access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-        repo: 943698457854.dkr.ecr.us-east-1.amazonaws.com/nice-bot
-        region: us-east-1
-        tags: latest,${{ github.sha }}
-        create_repo: true
-        path: ../../ 
+    steps: 
+      - run: docker build --tag nice-bot:${{ github.sha }} --tag nice-bot:latest .
+      - name: Push to ECR
+        id: ecr
+        uses: jwalton/gh-ecr-push@v1
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+          image: my-image:${{ github.sha }}
+      - name: Push to ECR
+        id: ecr2
+        uses: jwalton/gh-ecr-push@v1
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+          image: my-image:latest
