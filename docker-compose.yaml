@@ -4,6 +4,7 @@ services:
   nice-bot:
     build: ./front-end/
     container_name: nice-bot
+    stdin_open: true
     ports:
       - "3000:3000"
     env_file:
