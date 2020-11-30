@@ -118,6 +118,7 @@ const ImageUrl = styled.div`
   background-position: center center;
 `;
 
+ 
 const BannerCard = ({ item }) => {
   const { content, icon, title, authorName, authorImg, type, bgImage } = item;
   return (

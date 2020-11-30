@@ -3,6 +3,7 @@ import { Spin } from 'antd';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import Dashboard from './dashboard';
 import Pages from './pages';
+import Predict from './predict';
 import withAdminLayout from '../../layout/withAdminLayout';
 
 const Classifier = lazy(() => import('./classifier'));
@@ -21,6 +22,7 @@ const Admin = () => {
       >
         <Route path={path} component={Dashboard} />
         <Route path={`${path}/classify`} component={Classifier} />
+        <Route path={`${path}/predict`} component={Predict} />
         <Route path={`${path}`} component={Pages} />
       </Suspense>
     </Switch>

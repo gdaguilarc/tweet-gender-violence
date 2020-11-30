@@ -17,8 +17,6 @@ const {
 
 const tweetsReducer = (state = initialState, action) => {
   const { type, data, err } = action;
-  console.log(type);
-
   switch (type) {
     case GET_UNCLASSIFIED_TWEET:
       return {
@@ -26,7 +24,6 @@ const tweetsReducer = (state = initialState, action) => {
         loading: true,
       };
     case GET_UNCLASSIFIED_TWEET_SUCCESS:
-      console.log('PERREO', data);
       return {
         ...initialState,
         data,

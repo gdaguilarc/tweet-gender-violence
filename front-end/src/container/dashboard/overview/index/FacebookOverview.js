@@ -32,20 +32,7 @@ const FacebookOverview = () => {
     <CardGroup>
       <div className="forcast-overview">
         {forcastOverviewState !== null && (
-          <Cards
-            isbutton={
-              <div className="card-radio">
-                <Radio.Group onChange={forcastOverview} defaultValue="today">
-                  <Radio.Button value="today">Today</Radio.Button>
-                  <Radio.Button value="week">Week</Radio.Button>
-                  <Radio.Button value="month">Month</Radio.Button>
-                  <Radio.Button value="year">Year</Radio.Button>
-                </Radio.Group>
-              </div>
-            }
-            title="Facebook Overview"
-            size="large"
-          >
+          <Cards title="Violent Tweets Overview" size="large">
             {foIsLoading ? (
               <div className="sd-spin">
                 <Spin />
@@ -58,14 +45,7 @@ const FacebookOverview = () => {
                       <Focard>
                         <div className="focard-details growth-upward">
                           <Heading as="h1">{forcastOverviewState.Engaged}</Heading>
-                          <p className="subtitle">Engaged Users</p>
-                          <p className="focard-status">
-                            <span className="focard-status__percentage">
-                              <FeatherIcon icon="trending-up" />
-                              25%
-                            </span>
-                            <span> 20,641 (prev)</span>
-                          </p>
+                          <p className="subtitle">Tweets Registrados</p>
                         </div>
                         <div className="focard-chart">
                           <ChartjsAreaChart
@@ -95,14 +75,7 @@ const FacebookOverview = () => {
                       <Focard>
                         <div className="focard-details growth-upward">
                           <Heading as="h1">{forcastOverviewState.Impressions}</Heading>
-                          <p className="subtitle">Page Impressions</p>
-                          <p className="focard-status">
-                            <span className="focard-status__percentage">
-                              <FeatherIcon icon="trending-up" />
-                              14%
-                            </span>
-                            <span> 20,641 (prev)</span>
-                          </p>
+                          <p className="subtitle">Tweets Violentos</p>
                         </div>
                         <div className="focard-chart">
                           <ChartjsAreaChart
@@ -136,14 +109,7 @@ const FacebookOverview = () => {
                       <Focard>
                         <div className="focard-details growth-downward">
                           <Heading as="h1">{forcastOverviewState.Like}</Heading>
-                          <p className="subtitle">Total Page Likes</p>
-                          <p className="focard-status">
-                            <span className="focard-status__percentage">
-                              <FeatherIcon icon="trending-down" />
-                              12%
-                            </span>
-                            <span> 20,641 (prev)</span>
-                          </p>
+                          <p className="subtitle">Tweets No Violentos</p>
                         </div>
                         <div className="focard-chart">
                           <ChartjsAreaChart
@@ -174,14 +140,7 @@ const FacebookOverview = () => {
                       <Focard>
                         <div className="focard-details growth-upward">
                           <Heading as="h1">{forcastOverviewState.Impressions2}</Heading>
-                          <p className="subtitle">Page Impressions</p>
-                          <p className="focard-status">
-                            <span className="focard-status__percentage">
-                              <FeatherIcon icon="trending-up" />
-                              14%
-                            </span>
-                            <span> 20,641 (prev)</span>
-                          </p>
+                          <p className="subtitle">Tweets sin Resultado</p>
                         </div>
                         <div className="focard-chart">
                           <ChartjsAreaChart

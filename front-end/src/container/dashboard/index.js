@@ -15,18 +15,6 @@ const Dashboard = () => {
       <PageHeader ghost title="Tweet Overview Dashboard" />
       <Main>
         <Row justify="center" gutter={25}>
-          {/* <Col xxl={8} lg={24} xs={24}>
-            <Suspense
-              fallback={
-                <Cards headless>
-                  <Skeleton active />
-                </Cards>
-              }
-            >
-              <SocialMediaOverview />
-            </Suspense>
-          </Col> */}
-
           <Col xxl={24} xs={24}>
             <Suspense
               fallback={
@@ -38,20 +26,7 @@ const Dashboard = () => {
               <FacebookOverview />
             </Suspense>
           </Col>
-
-          {/* <Col xxl={8} xs={24}>
-            <Suspense
-              fallback={
-                <Cards headless>
-                  <Skeleton active />
-                </Cards>
-              }
-            >
-              <YoutubeSubscribers />
-            </Suspense>
-          </Col> */}
-
-          <Col xxl={8} md={8} xs={24}>
+          <Col xxl={24} md={24} xs={24}>
             <Suspense
               fallback={
                 <Cards headless>
@@ -63,7 +38,7 @@ const Dashboard = () => {
             </Suspense>
           </Col>
 
-          <Col xxl={16} xs={24}>
+          {/* <Col xxl={16} xs={24}>
             <Suspense
               fallback={
                 <Cards headless>
@@ -73,7 +48,7 @@ const Dashboard = () => {
             >
               <SocialTrafficMetrics />
             </Suspense>
-          </Col>
+          </Col> */}
         </Row>
       </Main>
     </>
