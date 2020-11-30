@@ -1,5 +1,29 @@
 [
   {
+    "id": 23,
+    "date": "Nov 29, 2020",
+    "version": "3.4.1",
+    "new": [
+      "Flask API",
+      "Flask Model Predict",
+      "Flask use API Twitter",
+      "Dockerfile",
+      "Main.yml",
+      "Github Action",
+      "CI/CD Pipeline"
+    ],
+    "fixed": ["Flask Open in Local Network"],
+    "updated": ["Flask VENV", "Document Results", "Front-end Graphs"]
+  },
+  {
+    "id": 22,
+    "date": "Nov 27, 2020",
+    "version": "3.4.0",
+    "new": ["New Backend", "Backend in Flask"],
+    "fixed": ["ML Import"],
+    "updated": ["Dashboard Data"]
+  },
+  {
     "id": 21,
     "date": "Nov 23, 2020",
     "version": "3.3.0",
