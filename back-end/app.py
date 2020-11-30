@@ -5,7 +5,7 @@ import tensorflow as tf
 import requests, os, json, pickle, random
 
 from flask_cors import CORS
-from flask import Flask, request, jsonify
+from flask import Flask, Response, request, jsonify
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import tokenizer_from_json
 
@@ -21,24 +21,22 @@ with open('files/tokenizer.pickle', 'rb') as handle:
 
 @app.route('/predict', methods=['POST'])
 def predit():
+    print(request.json['tweet'])
     try: 
-        req = request.args.get('tweet')
+        req = request.json['tweet']
         arr = np.array([req])
         vec = tokenizer.texts_to_sequences(arr)
         tweet = pad_sequences(vec, maxlen=MAX_SEQ_LEN)
         res = model.predict_classes(tweet)[0]
-        
         return jsonify({
-                "statusCode": 200,
-                "status": "Prediction Made",
+                "modelStatus": "Prediction Made",
                 "result": "Misogynist" if res == 1 else "Not Misogynist"
-            })
+            }), 200
     except Exception as error:
         return jsonify({
-                "statusCode": 500,
-                "status": "Could not make prediction",
+                "modelStatus": "Could not make prediction",
                 "error": str(error)
-            })
+            }), 500
 
 @app.route('/tweets/getTweet', methods=['GET'])
 def getTweet():
@@ -48,7 +46,6 @@ def getTweet():
     df = pd.DataFrame(words)
     arr = df.to_numpy()
 
-    print(url)
     headers = create_headers(bearer_token)
     json_response = connect_to_endpoint(url, headers)
     for i in range(len(arr)):
