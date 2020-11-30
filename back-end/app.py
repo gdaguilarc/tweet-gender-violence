@@ -102,11 +102,4 @@ def connect_to_endpoint(url, headers):
         )
     return response.json()
 
-
-
-
-
-
-
-
-app.run()
+app.run('0.0.0.0', 5000, debug=True)
