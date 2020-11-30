@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI/CD-Front
+name: CI/CD-Back
 
 # Controls when the action will run. 
 on:
@@ -29,17 +29,17 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: nice-bot
+        ECR_REPOSITORY: nice-bot-back
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./front-end/
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./back-end/
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG        
     - name: Deploy to cluster
       uses: kodermax/kubectl-aws-eks@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: nice-bot
+        ECR_REPOSITORY: nice-bot-back
         IMAGE_TAG: ${{ github.sha }}
       with:
         args: set image deployment/$ECR_REPOSITORY $ECR_REPOSITORY=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
@@ -49,5 +49,5 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: rollout status deployment/nice-bot
+        args: rollout status deployment/nice-bot-back
         

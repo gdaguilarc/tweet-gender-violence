@@ -105,11 +105,4 @@ def connect_to_endpoint(url, headers):
         )
     return response.json()
 
-
-
-
-
-
-
-
 app.run()

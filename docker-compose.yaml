@@ -1,10 +1,17 @@
 version: '3'
 
 services:
-  app:
-    build: .
-    container_name: niceBot
+  nice-bot:
+    build: ./front-end/
+    container_name: nice-bot
     ports:
-      - "80:80"
+      - "3000:3000"
     env_file:
-      - .env
+      - ./front-end/.env
+  nice-bot-back:
+    build: ./back-end/
+    container_name: nice-bot-back
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./back-end/.env
